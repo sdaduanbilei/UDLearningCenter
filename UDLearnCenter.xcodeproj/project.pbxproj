@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573141AF2136500A7AD03 /* AppDelegate.swift */; };
+		816573171AF2136500A7AD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573161AF2136500A7AD03 /* ViewController.swift */; };
+		8165731A1AF2136500A7AD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816573181AF2136500A7AD03 /* Main.storyboard */; };
+		8165731C1AF2136500A7AD03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8165731B1AF2136500A7AD03 /* Images.xcassets */; };
+		8165731F1AF2136500A7AD03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8165731D1AF2136500A7AD03 /* LaunchScreen.xib */; };
+		8165732B1AF2136500A7AD03 /* UDLearnCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		816573251AF2136500A7AD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 816573071AF2136400A7AD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8165730E1AF2136500A7AD03;
+			remoteInfo = UDLearnCenter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8165730F1AF2136500A7AD03 /* UDLearnCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDLearnCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		816573131AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816573141AF2136500A7AD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		816573161AF2136500A7AD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		816573191AF2136500A7AD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8165731B1AF2136500A7AD03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8165731E1AF2136500A7AD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDLearnCenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		816573291AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDLearnCenterTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8165730C1AF2136500A7AD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816573211AF2136500A7AD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		816573061AF2136400A7AD03 = {
+			isa = PBXGroup;
+			children = (
+				816573111AF2136500A7AD03 /* UDLearnCenter */,
+				816573271AF2136500A7AD03 /* UDLearnCenterTests */,
+				816573101AF2136500A7AD03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		816573101AF2136500A7AD03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8165730F1AF2136500A7AD03 /* UDLearnCenter.app */,
+				816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		816573111AF2136500A7AD03 /* UDLearnCenter */ = {
+			isa = PBXGroup;
+			children = (
+				816573141AF2136500A7AD03 /* AppDelegate.swift */,
+				816573161AF2136500A7AD03 /* ViewController.swift */,
+				816573181AF2136500A7AD03 /* Main.storyboard */,
+				8165731B1AF2136500A7AD03 /* Images.xcassets */,
+				8165731D1AF2136500A7AD03 /* LaunchScreen.xib */,
+				816573121AF2136500A7AD03 /* Supporting Files */,
+			);
+			path = UDLearnCenter;
+			sourceTree = "<group>";
+		};
+		816573121AF2136500A7AD03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				816573131AF2136500A7AD03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		816573271AF2136500A7AD03 /* UDLearnCenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */,
+				816573281AF2136500A7AD03 /* Supporting Files */,
+			);
+			path = UDLearnCenterTests;
+			sourceTree = "<group>";
+		};
+		816573281AF2136500A7AD03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				816573291AF2136500A7AD03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8165730E1AF2136500A7AD03 /* UDLearnCenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8165732E1AF2136500A7AD03 /* Build configuration list for PBXNativeTarget "UDLearnCenter" */;
+			buildPhases = (
+				8165730B1AF2136500A7AD03 /* Sources */,
+				8165730C1AF2136500A7AD03 /* Frameworks */,
+				8165730D1AF2136500A7AD03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UDLearnCenter;
+			productName = UDLearnCenter;
+			productReference = 8165730F1AF2136500A7AD03 /* UDLearnCenter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		816573231AF2136500A7AD03 /* UDLearnCenterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816573311AF2136500A7AD03 /* Build configuration list for PBXNativeTarget "UDLearnCenterTests" */;
+			buildPhases = (
+				816573201AF2136500A7AD03 /* Sources */,
+				816573211AF2136500A7AD03 /* Frameworks */,
+				816573221AF2136500A7AD03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				816573261AF2136500A7AD03 /* PBXTargetDependency */,
+			);
+			name = UDLearnCenterTests;
+			productName = UDLearnCenterTests;
+			productReference = 816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		816573071AF2136400A7AD03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = scorpio;
+				TargetAttributes = {
+					8165730E1AF2136500A7AD03 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					816573231AF2136500A7AD03 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 8165730E1AF2136500A7AD03;
+					};
+				};
+			};
+			buildConfigurationList = 8165730A1AF2136400A7AD03 /* Build configuration list for PBXProject "UDLearnCenter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 816573061AF2136400A7AD03;
+			productRefGroup = 816573101AF2136500A7AD03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8165730E1AF2136500A7AD03 /* UDLearnCenter */,
+				816573231AF2136500A7AD03 /* UDLearnCenterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8165730D1AF2136500A7AD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8165731A1AF2136500A7AD03 /* Main.storyboard in Resources */,
+				8165731F1AF2136500A7AD03 /* LaunchScreen.xib in Resources */,
+				8165731C1AF2136500A7AD03 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816573221AF2136500A7AD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8165730B1AF2136500A7AD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816573171AF2136500A7AD03 /* ViewController.swift in Sources */,
+				816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816573201AF2136500A7AD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8165732B1AF2136500A7AD03 /* UDLearnCenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		816573261AF2136500A7AD03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8165730E1AF2136500A7AD03 /* UDLearnCenter */;
+			targetProxy = 816573251AF2136500A7AD03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		816573181AF2136500A7AD03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				816573191AF2136500A7AD03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8165731D1AF2136500A7AD03 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8165731E1AF2136500A7AD03 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8165732C1AF2136500A7AD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8165732D1AF2136500A7AD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8165732F1AF2136500A7AD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UDLearnCenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		816573301AF2136500A7AD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UDLearnCenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		816573321AF2136500A7AD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UDLearnCenterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDLearnCenter.app/UDLearnCenter";
+			};
+			name = Debug;
+		};
+		816573331AF2136500A7AD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UDLearnCenterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDLearnCenter.app/UDLearnCenter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8165730A1AF2136400A7AD03 /* Build configuration list for PBXProject "UDLearnCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8165732C1AF2136500A7AD03 /* Debug */,
+				8165732D1AF2136500A7AD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8165732E1AF2136500A7AD03 /* Build configuration list for PBXNativeTarget "UDLearnCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8165732F1AF2136500A7AD03 /* Debug */,
+				816573301AF2136500A7AD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		816573311AF2136500A7AD03 /* Build configuration list for PBXNativeTarget "UDLearnCenterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816573321AF2136500A7AD03 /* Debug */,
+				816573331AF2136500A7AD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 816573071AF2136400A7AD03 /* Project object */;
+}
