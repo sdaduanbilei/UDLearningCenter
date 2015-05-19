@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81072D871B037866004A63FD /* AsyncImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81072D861B037866004A63FD /* AsyncImageUtil.swift */; };
+		813855791B05BC8900D6355C /* LogupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813855781B05BC8900D6355C /* LogupViewController.swift */; };
+		81515C6D1B02401A00C2183D /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81515C6C1B02401A00C2183D /* DataControl.swift */; };
 		816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573141AF2136500A7AD03 /* AppDelegate.swift */; };
 		816573171AF2136500A7AD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573161AF2136500A7AD03 /* ViewController.swift */; };
-		8165731A1AF2136500A7AD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816573181AF2136500A7AD03 /* Main.storyboard */; };
 		8165731C1AF2136500A7AD03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8165731B1AF2136500A7AD03 /* Images.xcassets */; };
 		8165731F1AF2136500A7AD03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8165731D1AF2136500A7AD03 /* LaunchScreen.xib */; };
 		8165732B1AF2136500A7AD03 /* UDLearnCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */; };
+		8165733C1AF2297F00A7AD03 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165733B1AF2297F00A7AD03 /* MainViewController.swift */; };
+		81977E2D1B030D2F00B43350 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */; };
+		81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1D1B030D2F00B43350 /* AFHTTPRequestOperationManager.m */; };
+		81977E2F1B030D2F00B43350 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1F1B030D2F00B43350 /* AFHTTPSessionManager.m */; };
+		81977E301B030D2F00B43350 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E221B030D2F00B43350 /* AFNetworkReachabilityManager.m */; };
+		81977E311B030D2F00B43350 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E241B030D2F00B43350 /* AFSecurityPolicy.m */; };
+		81977E321B030D2F00B43350 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E261B030D2F00B43350 /* AFURLConnectionOperation.m */; };
+		81977E331B030D2F00B43350 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E281B030D2F00B43350 /* AFURLRequestSerialization.m */; };
+		81977E341B030D2F00B43350 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E2A1B030D2F00B43350 /* AFURLResponseSerialization.m */; };
+		81977E351B030D2F00B43350 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E2C1B030D2F00B43350 /* AFURLSessionManager.m */; };
+		81977E391B0314AC00B43350 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81977E381B0314AC00B43350 /* SwiftyJSON.swift */; };
+		81977E3C1B03185B00B43350 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81977E3B1B03185B00B43350 /* UserModel.swift */; };
+		81977E3F1B03204B00B43350 /* ToolsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81977E3E1B03204B00B43350 /* ToolsUtil.swift */; };
+		81977E461B03214800B43350 /* FVCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81977E451B03214800B43350 /* FVCustomAlertView.swift */; };
+		81977E491B032A7800B43350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81977E471B032A7800B43350 /* Main.storyboard */; };
+		81CFA4B41B0450C7000CABFA /* JionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4B31B0450C7000CABFA /* JionViewController.swift */; };
+		81CFA4B61B04788F000CABFA /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4B51B04788F000CABFA /* AnswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +45,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8165730F1AF2136500A7AD03 /* UDLearnCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDLearnCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81072D861B037866004A63FD /* AsyncImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageUtil.swift; sourceTree = "<group>"; };
+		81072D891B038902004A63FD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		813855781B05BC8900D6355C /* LogupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogupViewController.swift; sourceTree = "<group>"; };
+		81515C6C1B02401A00C2183D /* DataControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
+		8165730F1AF2136500A7AD03 /* 优迪爱学习中心.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "优迪爱学习中心.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816573131AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816573141AF2136500A7AD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816573161AF2136500A7AD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		816573191AF2136500A7AD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8165731B1AF2136500A7AD03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8165731E1AF2136500A7AD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDLearnCenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		816573291AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDLearnCenterTests.swift; sourceTree = "<group>"; };
+		8165733B1AF2297F00A7AD03 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		81977E191B030D2F00B43350 /* UDLearnCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDLearnCenter-Bridging-Header.h"; sourceTree = "<group>"; };
+		81977E1A1B030D2F00B43350 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		81977E1C1B030D2F00B43350 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		81977E1D1B030D2F00B43350 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		81977E1E1B030D2F00B43350 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		81977E1F1B030D2F00B43350 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		81977E201B030D2F00B43350 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		81977E211B030D2F00B43350 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		81977E221B030D2F00B43350 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		81977E231B030D2F00B43350 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		81977E241B030D2F00B43350 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		81977E251B030D2F00B43350 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		81977E261B030D2F00B43350 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		81977E271B030D2F00B43350 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		81977E281B030D2F00B43350 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		81977E291B030D2F00B43350 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		81977E2A1B030D2F00B43350 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		81977E2B1B030D2F00B43350 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		81977E2C1B030D2F00B43350 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		81977E371B0314AC00B43350 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		81977E381B0314AC00B43350 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		81977E3B1B03185B00B43350 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		81977E3E1B03204B00B43350 /* ToolsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsUtil.swift; sourceTree = "<group>"; };
+		81977E451B03214800B43350 /* FVCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVCustomAlertView.swift; sourceTree = "<group>"; };
+		81977E481B032A7800B43350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81CFA4B31B0450C7000CABFA /* JionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JionViewController.swift; sourceTree = "<group>"; };
+		81CFA4B51B04788F000CABFA /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +107,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8120843A1B0241E4000D3A78 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				81977E1A1B030D2F00B43350 /* AFHTTPRequestOperation.h */,
+				81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */,
+				81977E1C1B030D2F00B43350 /* AFHTTPRequestOperationManager.h */,
+				81977E1D1B030D2F00B43350 /* AFHTTPRequestOperationManager.m */,
+				81977E1E1B030D2F00B43350 /* AFHTTPSessionManager.h */,
+				81977E1F1B030D2F00B43350 /* AFHTTPSessionManager.m */,
+				81977E201B030D2F00B43350 /* AFNetworking.h */,
+				81977E211B030D2F00B43350 /* AFNetworkReachabilityManager.h */,
+				81977E221B030D2F00B43350 /* AFNetworkReachabilityManager.m */,
+				81977E231B030D2F00B43350 /* AFSecurityPolicy.h */,
+				81977E241B030D2F00B43350 /* AFSecurityPolicy.m */,
+				81977E251B030D2F00B43350 /* AFURLConnectionOperation.h */,
+				81977E261B030D2F00B43350 /* AFURLConnectionOperation.m */,
+				81977E271B030D2F00B43350 /* AFURLRequestSerialization.h */,
+				81977E281B030D2F00B43350 /* AFURLRequestSerialization.m */,
+				81977E291B030D2F00B43350 /* AFURLResponseSerialization.h */,
+				81977E2A1B030D2F00B43350 /* AFURLResponseSerialization.m */,
+				81977E2B1B030D2F00B43350 /* AFURLSessionManager.h */,
+				81977E2C1B030D2F00B43350 /* AFURLSessionManager.m */,
+				81977E191B030D2F00B43350 /* UDLearnCenter-Bridging-Header.h */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		81515C681B023F7200C2183D /* library */ = {
+			isa = PBXGroup;
+			children = (
+				81977E441B03213E00B43350 /* view */,
+				81977E3D1B03204200B43350 /* util */,
+				81977E361B03149E00B43350 /* swiftJson */,
+				8120843A1B0241E4000D3A78 /* AFNetworking */,
+			);
+			name = library;
+			sourceTree = "<group>";
+		};
+		81515C6B1B023FF300C2183D /* request */ = {
+			isa = PBXGroup;
+			children = (
+				81515C6C1B02401A00C2183D /* DataControl.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
 		816573061AF2136400A7AD03 = {
 			isa = PBXGroup;
 			children = (
+				81072D891B038902004A63FD /* MyPlayground.playground */,
 				816573111AF2136500A7AD03 /* UDLearnCenter */,
 				816573271AF2136500A7AD03 /* UDLearnCenterTests */,
 				816573101AF2136500A7AD03 /* Products */,
@@ -68,7 +166,7 @@
 		816573101AF2136500A7AD03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8165730F1AF2136500A7AD03 /* UDLearnCenter.app */,
+				8165730F1AF2136500A7AD03 /* 优迪爱学习中心.app */,
 				816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */,
 			);
 			name = Products;
@@ -77,9 +175,11 @@
 		816573111AF2136500A7AD03 /* UDLearnCenter */ = {
 			isa = PBXGroup;
 			children = (
+				81977E3A1B03183500B43350 /* Model */,
+				81515C6B1B023FF300C2183D /* request */,
+				81515C681B023F7200C2183D /* library */,
+				816573341AF226D300A7AD03 /* page */,
 				816573141AF2136500A7AD03 /* AppDelegate.swift */,
-				816573161AF2136500A7AD03 /* ViewController.swift */,
-				816573181AF2136500A7AD03 /* Main.storyboard */,
 				8165731B1AF2136500A7AD03 /* Images.xcassets */,
 				8165731D1AF2136500A7AD03 /* LaunchScreen.xib */,
 				816573121AF2136500A7AD03 /* Supporting Files */,
@@ -112,6 +212,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		816573341AF226D300A7AD03 /* page */ = {
+			isa = PBXGroup;
+			children = (
+				81977E471B032A7800B43350 /* Main.storyboard */,
+				816573161AF2136500A7AD03 /* ViewController.swift */,
+				8165733B1AF2297F00A7AD03 /* MainViewController.swift */,
+				81CFA4B31B0450C7000CABFA /* JionViewController.swift */,
+				81CFA4B51B04788F000CABFA /* AnswerViewController.swift */,
+				813855781B05BC8900D6355C /* LogupViewController.swift */,
+			);
+			name = page;
+			sourceTree = "<group>";
+		};
+		81977E361B03149E00B43350 /* swiftJson */ = {
+			isa = PBXGroup;
+			children = (
+				81977E371B0314AC00B43350 /* SwiftyJSON.h */,
+				81977E381B0314AC00B43350 /* SwiftyJSON.swift */,
+			);
+			name = swiftJson;
+			sourceTree = "<group>";
+		};
+		81977E3A1B03183500B43350 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81977E3B1B03185B00B43350 /* UserModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		81977E3D1B03204200B43350 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				81977E3E1B03204B00B43350 /* ToolsUtil.swift */,
+				81072D861B037866004A63FD /* AsyncImageUtil.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		81977E441B03213E00B43350 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				81977E451B03214800B43350 /* FVCustomAlertView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,7 +276,7 @@
 			);
 			name = UDLearnCenter;
 			productName = UDLearnCenter;
-			productReference = 8165730F1AF2136500A7AD03 /* UDLearnCenter.app */;
+			productReference = 8165730F1AF2136500A7AD03 /* 优迪爱学习中心.app */;
 			productType = "com.apple.product-type.application";
 		};
 		816573231AF2136500A7AD03 /* UDLearnCenterTests */ = {
@@ -161,6 +308,7 @@
 				TargetAttributes = {
 					8165730E1AF2136500A7AD03 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SGS62HXEMW;
 					};
 					816573231AF2136500A7AD03 = {
 						CreatedOnToolsVersion = 6.2;
@@ -192,7 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8165731A1AF2136500A7AD03 /* Main.storyboard in Resources */,
+				81977E491B032A7800B43350 /* Main.storyboard in Resources */,
 				8165731F1AF2136500A7AD03 /* LaunchScreen.xib in Resources */,
 				8165731C1AF2136500A7AD03 /* Images.xcassets in Resources */,
 			);
@@ -212,8 +360,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8165733C1AF2297F00A7AD03 /* MainViewController.swift in Sources */,
+				81977E311B030D2F00B43350 /* AFSecurityPolicy.m in Sources */,
 				816573171AF2136500A7AD03 /* ViewController.swift in Sources */,
+				81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */,
+				81977E321B030D2F00B43350 /* AFURLConnectionOperation.m in Sources */,
+				81977E391B0314AC00B43350 /* SwiftyJSON.swift in Sources */,
+				81977E2D1B030D2F00B43350 /* AFHTTPRequestOperation.m in Sources */,
 				816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */,
+				81977E331B030D2F00B43350 /* AFURLRequestSerialization.m in Sources */,
+				81977E3F1B03204B00B43350 /* ToolsUtil.swift in Sources */,
+				81977E2F1B030D2F00B43350 /* AFHTTPSessionManager.m in Sources */,
+				81977E461B03214800B43350 /* FVCustomAlertView.swift in Sources */,
+				81CFA4B61B04788F000CABFA /* AnswerViewController.swift in Sources */,
+				813855791B05BC8900D6355C /* LogupViewController.swift in Sources */,
+				81072D871B037866004A63FD /* AsyncImageUtil.swift in Sources */,
+				81977E301B030D2F00B43350 /* AFNetworkReachabilityManager.m in Sources */,
+				81977E341B030D2F00B43350 /* AFURLResponseSerialization.m in Sources */,
+				81977E351B030D2F00B43350 /* AFURLSessionManager.m in Sources */,
+				81977E3C1B03185B00B43350 /* UserModel.swift in Sources */,
+				81515C6D1B02401A00C2183D /* DataControl.swift in Sources */,
+				81CFA4B41B0450C7000CABFA /* JionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,20 +403,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		816573181AF2136500A7AD03 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				816573191AF2136500A7AD03 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8165731D1AF2136500A7AD03 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8165731E1AF2136500A7AD03 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		81977E471B032A7800B43350 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81977E481B032A7800B43350 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -336,9 +503,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UDLearnCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "优迪爱学习中心";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "UDLearnCenter/UDLearnCenter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +519,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UDLearnCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "优迪爱学习中心";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "UDLearnCenter/UDLearnCenter-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +583,7 @@
 				816573301AF2136500A7AD03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		816573311AF2136500A7AD03 /* Build configuration list for PBXNativeTarget "UDLearnCenterTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +592,7 @@
 				816573331AF2136500A7AD03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
