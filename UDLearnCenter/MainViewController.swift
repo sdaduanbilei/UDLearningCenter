@@ -33,8 +33,8 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        setUp();
-        initUserIcon();
+//        setUp();
+//        initUserIcon();
 
     }
     
@@ -57,8 +57,9 @@ class MainViewController: UIViewController {
                 self.user_type.setTitle("成人", forState: UIControlState.Normal)
             }
             // 用户头像
-            AsyncImageUtil.sharedLoader.imageForUrl(userModel.head, completionHandler: { (image, url) -> () in
-                self.userHeaderImg.image = image! 
+            AsyncImageUtil.sharedLoader.imageForUrl(userModel.head, completionHandler: {(image, url) -> () in
+                if (image != nil) {
+                    self.userHeaderImg.image = image!}
             })
             
             

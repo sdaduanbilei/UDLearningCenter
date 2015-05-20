@@ -16,6 +16,13 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
     var userModel : UserModel!
     var dialog :FVCustomAlertView!
     var prefs:NSUserDefaults!
+    
+    var kPreferredTextFieldToKeyboardOffset: CGFloat = 20.0
+    var keyboardFrame: CGRect = CGRect.nullRect
+    var keyboardIsShowing: Bool = false
+    var activiTextFile:UITextField! ;
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prefs = NSUserDefaults.standardUserDefaults();
@@ -24,7 +31,62 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
         setUp();
         phone.delegate = self ;
         pwd.delegate = self ;
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    func keyboardWillShow(notification: NSNotification)
+    {
+        self.keyboardIsShowing = true
+        
+        if let info = notification.userInfo {
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.arrangeViewOffsetFromKeyboard()
+        }
+        
+    }
+    
+    func arrangeViewOffsetFromKeyboard()
+    {
+        var theApp: UIApplication = UIApplication.sharedApplication()
+        var windowView: UIView? = theApp.delegate!.window!
+        
+        var textFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.activiTextFile!.frame.origin.y + self.activiTextFile!.frame.size.height + 50)
+        
+        var convertedTextFieldLowerPoint: CGPoint = self.view.convertPoint(textFieldLowerPoint, toView: windowView)
+        
+        var targetTextFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.keyboardFrame.origin.y - kPreferredTextFieldToKeyboardOffset)
+        
+        var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
+        var adjustedViewFrameCenter: CGPoint = CGPointMake(self.view.center.x, self.view.center.y + targetPointOffset )
+        
+        UIView.animateWithDuration(0.2, animations:  {
+            self.view.center = adjustedViewFrameCenter
+        })
+    }
+    
+    func returnViewToInitialFrame()
+    {
+        var initialViewRect: CGRect = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)
+        
+        if (!CGRectEqualToRect(initialViewRect, self.view.frame))
+        {
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.frame = initialViewRect
+            });
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification)
+    {
+        self.keyboardIsShowing = false
+        
+        self.returnViewToInitialFrame()
     }
     
     func setUp(){
@@ -64,9 +126,28 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
         return true
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true)
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("start edit")
+        self.activiTextFile = textField
+        
+        if(self.keyboardIsShowing)
+        {
+            self.arrangeViewOffsetFromKeyboard()
+        }
     }
+    
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
+//        if (self.activiTextFile != nil)
+//        {
+//            self.activiTextFile?.resignFirstResponder()
+//            self.activiTextFile = nil
+//        }
+    }
+    
+    
+    
     
     // 执行登录操作
     func login(user:String,pass:String){
@@ -90,9 +171,9 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
                 
                 self.userModel  = UserModel(userid: json["userId"].stringValue,head: head_url,nickname: json["nickname"].stringValue,score: json["score"].stringValue,conversations: json["conversations"].stringValue,userType: json["userType"].stringValue,words: json["words"].stringValue)
                 // 调转到首页
-                let mainViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewController") as? MainViewController;
-                mainViewController?.userModel = self.userModel ;
-                    self.navigationController?.pushViewController(mainViewController!, animated: true)
+                let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController;
+                homeViewController?.userModel = self.userModel ;
+                    self.navigationController?.pushViewController(homeViewController!, animated: true)
                 }else{
                 ToolsUtil.msgBox(json["MSG"].stringValue)
             }
@@ -121,7 +202,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        var str =  alertView.textFieldAtIndex(0)?.text.lowercaseString ;
+        var str =  alertView.textFieldAtIndex(0)?.text;
         print("str"+str!)
         if str!.isEmpty{
             print("empty")

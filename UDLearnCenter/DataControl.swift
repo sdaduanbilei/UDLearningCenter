@@ -18,11 +18,16 @@ class DataControl {
     class func initURL() -> String{
         prefs = NSUserDefaults.standardUserDefaults();
         if let service  = prefs.stringForKey("service"){
-//
-            BASE_URL = "http://"+service+"/"
+            if service.isEmpty{
+//                BASE_URL = "http://www.chuyuntech.com/cyClap/"
+//                BASE_URL = "http://192.168.1.245/"
+                BASE_URL = "http://112.112.170.66:8080/"
+            }else{
+            BASE_URL = "http://"+service+"/"}
         }else{
-            BASE_URL = "http://www.chuyuntech.com/cyClap/"
-            BASE_URL = "http://192.168.1.245/"
+//            BASE_URL = "http://www.chuyuntech.com/cyClap/"
+//            BASE_URL = "http://192.168.1.245/"
+            BASE_URL = "http://112.112.170.66:8080/"
         }
         return BASE_URL ;
        
@@ -38,6 +43,7 @@ class DataControl {
         
         manager.POST(BASE_URL+"api/login", parameters: params, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) ->Void in
             onSucc(response: responseObject)
+            print(responseObject)
             }) {(operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
             onFail(error: error)
         }
@@ -46,7 +52,7 @@ class DataControl {
     
     // 进入房间
     class func JionRoom(room:String,selected:String,userid:String ,onSucc:(response:AnyObject) ->Void,onFail:(error:NSError) ->Void){
-        
+        initURL();
         let manager = AFHTTPRequestOperationManager();
         var params:[String:String] ;
         if selected.isEmpty {
@@ -65,6 +71,7 @@ class DataControl {
     
     // 回答问题
     class func AnswerQuestion(userid:String,options:String,room:String,onSucc:(response:AnyObject) -> Void,onFail:(error:NSError) ->Void){
+        initURL();
         let manager = AFHTTPRequestOperationManager();
         var params = ["roomNo":room,"userId":userid,"options":options]
         manager.POST(BASE_URL+"api/answer", parameters: params, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) ->Void in
@@ -77,6 +84,7 @@ class DataControl {
     
     // 注册
     class func LogUp(phone:String,pwd:String ,nickname:String,imageData:NSData,userType:String,onSucc:(response:AnyObject)->Void,onFail:(error:NSError)->Void){
+        initURL();
         let manager = AFHTTPRequestOperationManager();
         var params = ["telNo":phone,"password":pwd,"nickname":nickname,"userType":userType]
         manager.POST( BASE_URL+"api/register2", parameters: params,

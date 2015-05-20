@@ -19,6 +19,12 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     @IBOutlet weak var nickname: UITextField!
     @IBOutlet weak var pwd: UITextField!
     @IBOutlet weak var selected_Img: UIButton!
+    @IBOutlet weak var temp_img: UIImageView!
+    
+    @IBOutlet weak var iamge_picker: UIImageView!
+    
+    var activiTextFile:UITextField! ;
+    
     var picker:UIImagePickerController!
     var Phone:String!
     var Nickname:String!
@@ -29,6 +35,10 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     var imagePath:NSString!
     var dialog:FVCustomAlertView!
     
+    var kPreferredTextFieldToKeyboardOffset: CGFloat = 20.0
+    var keyboardFrame: CGRect = CGRect.nullRect
+    var keyboardIsShowing: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp();
@@ -36,12 +46,86 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         self.nickname.delegate = self ;
         self.pwd.delegate = self ;
         // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
+    }
+    
+    func keyboardWillShow(notification: NSNotification)
+    {
+        self.keyboardIsShowing = true
+        
+        if let info = notification.userInfo {
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.arrangeViewOffsetFromKeyboard()
+        }
+        
+    }
+    
+    func arrangeViewOffsetFromKeyboard()
+    {
+        var theApp: UIApplication = UIApplication.sharedApplication()
+        var windowView: UIView? = theApp.delegate!.window!
+        
+        var textFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.activiTextFile!.frame.origin.y + self.activiTextFile!.frame.size.height + 50)
+        
+        var convertedTextFieldLowerPoint: CGPoint = self.view.convertPoint(textFieldLowerPoint, toView: windowView)
+        
+        var targetTextFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.keyboardFrame.origin.y - kPreferredTextFieldToKeyboardOffset)
+        
+        var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
+        var adjustedViewFrameCenter: CGPoint = CGPointMake(self.view.center.x, self.view.center.y + targetPointOffset )
+        
+        UIView.animateWithDuration(0.2, animations:  {
+            self.view.center = adjustedViewFrameCenter
+        })
+    }
+    
+    func returnViewToInitialFrame()
+    {
+        var initialViewRect: CGRect = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)
+        
+        if (!CGRectEqualToRect(initialViewRect, self.view.frame))
+        {
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.frame = initialViewRect
+            });
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification)
+    {
+        self.keyboardIsShowing = false
+        
+        self.returnViewToInitialFrame()
     }
 
     func setUp(){
         btn_adults.selected = true ;
         pwd.secureTextEntry = true ;
+        
+        
+        let imgClick = UITapGestureRecognizer(target: self, action: "picker_click");
+        self.temp_img.addGestureRecognizer(imgClick)
+        self.temp_img.userInteractionEnabled = true ;
+        
+        AsyncImageUtil.CircleImageView(self.temp_img)
     }
+    
+    func picker_click(){
+        var sheet: UIActionSheet = UIActionSheet()
+        
+        sheet.addButtonWithTitle("相机")
+        sheet.addButtonWithTitle("相册")
+        
+        sheet.addButtonWithTitle("取消")
+        sheet.cancelButtonIndex = sheet.numberOfButtons - 1
+        sheet.delegate = self
+        sheet.showInView(self.view)
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -162,25 +246,55 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.scrollView.endEditing(true)
+        if (self.activiTextFile != nil)
+        {
+            self.activiTextFile?.resignFirstResponder()
+            self.activiTextFile = nil
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("start edit")
+        self.activiTextFile = textField
+        
+        if(self.keyboardIsShowing)
+        {
+            self.arrangeViewOffsetFromKeyboard()
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print("end edit")
+        activiTextFile = nil ;
     }
     
     
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
-        print(info)
+        
+        
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage ;
+        
+        // 压缩图片
+        var imageSize:CGSize! = image?.size
+        imageSize.width = 144 ;
+        imageSize.height = 144
+        
+        UIGraphicsBeginImageContext(imageSize)
+        
+        image?.drawInRect(CGRectMake(0, 0, 144, 144))
+        var imageNew = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.imageData = UIImageJPEGRepresentation(imageNew, 0.5)
+        
+        // 显示圆形图片
         let whiterColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1);
-        self.selected_Img.imageView?.image = image ;
-        self.selected_Img.layer.borderWidth = 2 ;
-        self.selected_Img.layer.borderColor = whiterColor.CGColor ;
-        self.selected_Img.layer.cornerRadius = CGRectGetHeight(self.selected_Img.bounds)/2
-        self.selected_Img.clipsToBounds = true ;
-
-//        imageURL = info[UIImagePickerControllerReferenceURL] as NSURL
-        self.imageData = UIImageJPEGRepresentation(image!, 1.0)
+        self.temp_img.image = imageNew ;
+        
         
         picker.dismissViewControllerAnimated(true, completion: nil)
-        
+       
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -188,6 +302,13 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         picker.dismissViewControllerAnimated(true, completion: nil)
 
     }
+    
+    
+    @IBAction func tap_pic(sender: AnyObject) {
+        print("click")
+    }
+    
+    
     
     
     

@@ -19,6 +19,11 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
     var room_No:String!;
     var selected:String! ;
     var userModel:UserModel!;
+    
+    var kPreferredTextFieldToKeyboardOffset: CGFloat = 20.0
+    var keyboardFrame: CGRect = CGRect.nullRect
+    var keyboardIsShowing: Bool = false
+    var activiTextFile:UITextField! ;
 
     
     override func viewDidLoad() {
@@ -27,6 +32,60 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         setUp();
         self.room.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func keyboardWillShow(notification: NSNotification)
+    {
+        self.keyboardIsShowing = true
+        
+        if let info = notification.userInfo {
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.arrangeViewOffsetFromKeyboard()
+        }
+        
+    }
+    
+    func arrangeViewOffsetFromKeyboard()
+    {
+        var theApp: UIApplication = UIApplication.sharedApplication()
+        var windowView: UIView? = theApp.delegate!.window!
+        
+        var textFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.activiTextFile!.frame.origin.y + self.activiTextFile!.frame.size.height + 80)
+        
+        var convertedTextFieldLowerPoint: CGPoint = self.view.convertPoint(textFieldLowerPoint, toView: windowView)
+        
+        var targetTextFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.keyboardFrame.origin.y - kPreferredTextFieldToKeyboardOffset)
+        
+        var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
+        var adjustedViewFrameCenter: CGPoint = CGPointMake(self.view.center.x, self.view.center.y + targetPointOffset )
+        
+        UIView.animateWithDuration(0.2, animations:  {
+            self.view.center = adjustedViewFrameCenter
+        })
+    }
+    
+    func returnViewToInitialFrame()
+    {
+        var initialViewRect: CGRect = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)
+        
+        if (!CGRectEqualToRect(initialViewRect, self.view.frame))
+        {
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.frame = initialViewRect
+            });
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification)
+    {
+        self.keyboardIsShowing = false
+        
+        self.returnViewToInitialFrame()
     }
     
     func setUp(){
@@ -56,9 +115,31 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true)
+        
+        if (self.activiTextFile != nil)
+        {
+            self.activiTextFile?.resignFirstResponder()
+            self.activiTextFile = nil
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("start edit")
+        self.activiTextFile = textField
+        
+        if(self.keyboardIsShowing)
+        {
+            self.arrangeViewOffsetFromKeyboard()
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print("end edit")
+//        activiTextFile = nil ;
     }
 
+    
+    
     
     func imgClick(gesture:UIGestureRecognizer){
         print("iamge click")
@@ -103,7 +184,7 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
         ToolsUtil.msgBox(json["msg"].stringValue)
         }
        }) { (error) -> Void in
-        print(error)
+             ToolsUtil.msgBox(error.localizedDescription)
         }
     }
 

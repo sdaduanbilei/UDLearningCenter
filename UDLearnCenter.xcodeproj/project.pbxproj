@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		81072D871B037866004A63FD /* AsyncImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81072D861B037866004A63FD /* AsyncImageUtil.swift */; };
+		811F71621B0B5B3000890C23 /* PickerImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F71611B0B5B3000890C23 /* PickerImageUtil.swift */; };
+		812386411B0B781100876CE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812386401B0B781100876CE2 /* HomeViewController.swift */; };
 		813855791B05BC8900D6355C /* LogupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813855781B05BC8900D6355C /* LogupViewController.swift */; };
+		813A9EFC1B0C1E1D009CF5B0 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A9EFB1B0C1E1D009CF5B0 /* EditViewController.swift */; };
 		81515C6D1B02401A00C2183D /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81515C6C1B02401A00C2183D /* DataControl.swift */; };
 		816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573141AF2136500A7AD03 /* AppDelegate.swift */; };
 		816573171AF2136500A7AD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816573161AF2136500A7AD03 /* ViewController.swift */; };
 		8165731C1AF2136500A7AD03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8165731B1AF2136500A7AD03 /* Images.xcassets */; };
 		8165731F1AF2136500A7AD03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8165731D1AF2136500A7AD03 /* LaunchScreen.xib */; };
-		8165732B1AF2136500A7AD03 /* UDLearnCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */; };
 		8165733C1AF2297F00A7AD03 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165733B1AF2297F00A7AD03 /* MainViewController.swift */; };
 		81977E2D1B030D2F00B43350 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */; };
 		81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1D1B030D2F00B43350 /* AFHTTPRequestOperationManager.m */; };
@@ -47,7 +49,10 @@
 /* Begin PBXFileReference section */
 		81072D861B037866004A63FD /* AsyncImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageUtil.swift; sourceTree = "<group>"; };
 		81072D891B038902004A63FD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		811F71611B0B5B3000890C23 /* PickerImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerImageUtil.swift; sourceTree = "<group>"; };
+		812386401B0B781100876CE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		813855781B05BC8900D6355C /* LogupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogupViewController.swift; sourceTree = "<group>"; };
+		813A9EFB1B0C1E1D009CF5B0 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		81515C6C1B02401A00C2183D /* DataControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
 		8165730F1AF2136500A7AD03 /* 优迪爱学习中心.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "优迪爱学习中心.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816573131AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,8 +61,6 @@
 		8165731B1AF2136500A7AD03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8165731E1AF2136500A7AD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		816573241AF2136500A7AD03 /* UDLearnCenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDLearnCenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		816573291AF2136500A7AD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDLearnCenterTests.swift; sourceTree = "<group>"; };
 		8165733B1AF2297F00A7AD03 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		81977E191B030D2F00B43350 /* UDLearnCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDLearnCenter-Bridging-Header.h"; sourceTree = "<group>"; };
 		81977E1A1B030D2F00B43350 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -158,7 +161,6 @@
 			children = (
 				81072D891B038902004A63FD /* MyPlayground.playground */,
 				816573111AF2136500A7AD03 /* UDLearnCenter */,
-				816573271AF2136500A7AD03 /* UDLearnCenterTests */,
 				816573101AF2136500A7AD03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,23 +197,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		816573271AF2136500A7AD03 /* UDLearnCenterTests */ = {
-			isa = PBXGroup;
-			children = (
-				8165732A1AF2136500A7AD03 /* UDLearnCenterTests.swift */,
-				816573281AF2136500A7AD03 /* Supporting Files */,
-			);
-			path = UDLearnCenterTests;
-			sourceTree = "<group>";
-		};
-		816573281AF2136500A7AD03 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				816573291AF2136500A7AD03 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		816573341AF226D300A7AD03 /* page */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +206,8 @@
 				81CFA4B31B0450C7000CABFA /* JionViewController.swift */,
 				81CFA4B51B04788F000CABFA /* AnswerViewController.swift */,
 				813855781B05BC8900D6355C /* LogupViewController.swift */,
+				812386401B0B781100876CE2 /* HomeViewController.swift */,
+				813A9EFB1B0C1E1D009CF5B0 /* EditViewController.swift */,
 			);
 			name = page;
 			sourceTree = "<group>";
@@ -247,6 +234,7 @@
 			children = (
 				81977E3E1B03204B00B43350 /* ToolsUtil.swift */,
 				81072D861B037866004A63FD /* AsyncImageUtil.swift */,
+				811F71611B0B5B3000890C23 /* PickerImageUtil.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -363,9 +351,12 @@
 				8165733C1AF2297F00A7AD03 /* MainViewController.swift in Sources */,
 				81977E311B030D2F00B43350 /* AFSecurityPolicy.m in Sources */,
 				816573171AF2136500A7AD03 /* ViewController.swift in Sources */,
+				811F71621B0B5B3000890C23 /* PickerImageUtil.swift in Sources */,
 				81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */,
 				81977E321B030D2F00B43350 /* AFURLConnectionOperation.m in Sources */,
+				812386411B0B781100876CE2 /* HomeViewController.swift in Sources */,
 				81977E391B0314AC00B43350 /* SwiftyJSON.swift in Sources */,
+				813A9EFC1B0C1E1D009CF5B0 /* EditViewController.swift in Sources */,
 				81977E2D1B030D2F00B43350 /* AFHTTPRequestOperation.m in Sources */,
 				816573151AF2136500A7AD03 /* AppDelegate.swift in Sources */,
 				81977E331B030D2F00B43350 /* AFURLRequestSerialization.m in Sources */,
@@ -388,7 +379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8165732B1AF2136500A7AD03 /* UDLearnCenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,9 +497,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UDLearnCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "优迪爱学习中心";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "UDLearnCenter/UDLearnCenter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -523,9 +515,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UDLearnCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "优迪爱学习中心";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "UDLearnCenter/UDLearnCenter-Bridging-Header.h";
 			};
 			name = Release;
