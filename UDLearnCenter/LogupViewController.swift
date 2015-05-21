@@ -47,13 +47,13 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         self.pwd.delegate = self ;
         // Do any additional setup after loading the view.
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillshow:", name: UIKeyboardWillShowNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillhide:", name: UIKeyboardWillHideNotification, object: nil)
         
     }
     
-    func keyboardWillShow(notification: NSNotification)
+    func keyboardWillshow(notification: NSNotification)
     {
         self.keyboardIsShowing = true
         
@@ -95,7 +95,7 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         }
     }
     
-    func keyboardWillHide(notification: NSNotification)
+    func keyboardWillhide(notification: NSNotification)
     {
         self.keyboardIsShowing = false
         
@@ -249,7 +249,7 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         if (self.activiTextFile != nil)
         {
             self.activiTextFile?.resignFirstResponder()
-            self.activiTextFile = nil
+            
         }
     }
     
@@ -265,7 +265,7 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     
     func textFieldDidEndEditing(textField: UITextField) {
         print("end edit")
-        activiTextFile = nil ;
+        self.activiTextFile = self.phone
     }
     
     

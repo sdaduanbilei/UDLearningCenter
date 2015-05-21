@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController , EditModelDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var user_info: UIView!
     @IBOutlet weak var webView: UIWebView!
     var userModel :UserModel! ;
+    var nick_name:UILabel! ;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ class HomeViewController: UIViewController {
             
             
             // 用户昵称
-            let nick_name = UILabel(frame: CGRectMake(8, 0, user_nickname.frame.width, user_nickname.frame.height))
+            nick_name = UILabel(frame: CGRectMake(8, 0, user_nickname.frame.width, user_nickname.frame.height))
             nick_name.text = userModel.nickname ;
             user_nickname.layer.cornerRadius = 4 ;
             user_nickname.layer.masksToBounds = true ;
@@ -155,9 +156,24 @@ class HomeViewController: UIViewController {
         
         editViewController.userModel = self.userModel ;
         
+        editViewController.delegate = self ;
+        
         self.navigationController?.pushViewController(editViewController, animated: true)
         
     }
+    
+    
+    func editUserIcon(image: UIImage) {
+        self.userHeaderImg.image = image ;
+    }
+    
+     func editUserName(name: String) {
+        self.nick_name.text = name ;
+        userModel.nickname = name ;
+        print(name)
+    }
+    
+    
     
 
     /*

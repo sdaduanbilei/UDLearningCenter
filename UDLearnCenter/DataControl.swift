@@ -90,6 +90,7 @@ class DataControl {
         manager.POST( BASE_URL+"api/register2", parameters: params,
             constructingBodyWithBlock: { (data: AFMultipartFormData!) in
                 data.appendPartWithFileData(imageData, name: "head", fileName: "head.jpg", mimeType: "image/jpeg")
+                print(data)
                 },
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 print(responseObject)
@@ -97,6 +98,50 @@ class DataControl {
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("We got an error here.. \(error.localizedDescription)")
+        })
+    }
+    
+    // 编辑
+    class func Edit(phone:String,pwd:String,nickname:String,type:Int,userid:String ,imageData:NSData,onSucc:(response:AnyObject) ->Void,onFail:(error:NSError) -> Void){
+        initURL()
+        print("有图")
+        let manager = AFHTTPRequestOperationManager();
+        var params = ["telNo":phone,"password":pwd,"nickname":nickname,"type":type,"user_id":userid]
+        print(params)
+        manager.POST( BASE_URL+"api/edit", parameters: params,
+            constructingBodyWithBlock: { (data: AFMultipartFormData!) in
+                data.appendPartWithFileData(imageData, name: "head", fileName: "head.jpg", mimeType: "image/jpeg")
+                print(data)
+            },
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                print(responseObject)
+                onSucc(response: responseObject)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("We got an error here.. \(error.localizedDescription)")
+                onFail(error: error)
+        })
+    }
+    
+    
+    // 编剧 无图
+    class func Edit(phone:String,pwd:String,nickname:String,type:Int,userid:String,onSucc:(response:AnyObject) ->Void,onFail:(error:NSError) -> Void){
+        print("无图")
+        initURL()
+        let manager = AFHTTPRequestOperationManager();
+        var params = ["telNo":phone,"password":pwd,"nickname":nickname,"type":type,"user_id":userid]
+        print(params)
+        manager.POST( BASE_URL+"api/edit", parameters: params,
+            constructingBodyWithBlock: { (data: AFMultipartFormData!) in
+                
+            },
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                print(responseObject)
+                onSucc(response: responseObject)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("We got an error here.. \(error.localizedDescription)")
+                onFail(error: error)
         })
     }
 }

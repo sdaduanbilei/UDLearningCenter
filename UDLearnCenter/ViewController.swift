@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
+class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate {
 
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var pwd: UITextField!
@@ -29,8 +29,10 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.98, green:0.32, blue:0.02, alpha:1)
         self.navigationController?.navigationBar.tintColor  = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1)
         setUp();
+        
         phone.delegate = self ;
         pwd.delegate = self ;
+        activiTextFile = self.phone ;
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
@@ -56,7 +58,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
         var theApp: UIApplication = UIApplication.sharedApplication()
         var windowView: UIView? = theApp.delegate!.window!
         
-        var textFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.activiTextFile!.frame.origin.y + self.activiTextFile!.frame.size.height + 50)
+        var textFieldLowerPoint: CGPoint = CGPointMake(self.activiTextFile!.frame.origin.x, self.activiTextFile!.frame.origin.y + self.activiTextFile!.frame.size.height)
         
         var convertedTextFieldLowerPoint: CGPoint = self.view.convertPoint(textFieldLowerPoint, toView: windowView)
         
@@ -68,6 +70,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
         UIView.animateWithDuration(0.2, animations:  {
             self.view.center = adjustedViewFrameCenter
         })
+        
     }
     
     func returnViewToInitialFrame()
@@ -139,11 +142,11 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-//        if (self.activiTextFile != nil)
-//        {
-//            self.activiTextFile?.resignFirstResponder()
+        if (self.activiTextFile != nil)
+        {
+            self.activiTextFile?.resignFirstResponder()
 //            self.activiTextFile = nil
-//        }
+        }
     }
     
     

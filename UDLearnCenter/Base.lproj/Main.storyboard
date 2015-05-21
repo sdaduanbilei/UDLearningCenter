@@ -189,7 +189,7 @@
         <!--优迪爱学习中心-->
         <scene sceneID="caL-Gc-aSS">
             <objects>
-                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" id="iya-HT-9I7" customClass="HomeViewController" customModule="优迪爱学习中心" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" id="iya-HT-9I7" customClass="HomeViewController" customModule="优迪爱学习中心" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kw5-Bn-55j"/>
                         <viewControllerLayoutGuide type="bottom" id="AZu-1p-QVc"/>
@@ -521,7 +521,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1001" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="jion_a" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-Zk-Va2">
-                                                <rect key="frame" x="8" y="264" width="116" height="87"/>
+                                                <rect key="frame" x="8" y="246" width="116" height="87"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.89999999999999991"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="7ev-gX-Lq1"/>
@@ -530,7 +530,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1002" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="jion_b" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-W8-y6F">
-                                                <rect key="frame" x="8" y="372" width="116" height="87"/>
+                                                <rect key="frame" x="8" y="354" width="116" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3yG-W8-y6F" secondAttribute="height" multiplier="4:3" id="7V0-5M-9Jf"/>
                                                     <constraint firstAttribute="height" constant="87" id="Du8-zP-viZ"/>
@@ -538,7 +538,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="Afb-sA-8PD">
-                                                <rect key="frame" x="108" y="49" width="105" height="135"/>
+                                                <rect key="frame" x="108" y="31" width="105" height="135"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="105" id="2C3-iG-8zP"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="EZF-2K-KjO"/>
@@ -548,7 +548,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1004" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="jion_d" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-Cr-m8I">
-                                                <rect key="frame" x="196" y="372" width="116" height="87"/>
+                                                <rect key="frame" x="196" y="354" width="116" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="4Le-9W-ojJ"/>
                                                     <constraint firstAttribute="width" constant="116" id="Ylu-PB-Rri"/>
@@ -556,12 +556,12 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-2q-qEE">
-                                                <rect key="frame" x="8" y="208" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="190" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ery-Hb-r6Y">
-                                                <rect key="frame" x="8" y="483" width="304" height="40"/>
+                                                <rect key="frame" x="8" y="465" width="304" height="40"/>
                                                 <color key="backgroundColor" red="0.40784313729999999" green="0.74901960779999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Ova-Wn-kNz"/>
@@ -575,7 +575,7 @@
                                                 </connections>
                                             </button>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1003" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="jion_c" translatesAutoresizingMaskIntoConstraints="NO" id="tTH-Oh-Q8p">
-                                                <rect key="frame" x="196" y="264" width="116" height="87"/>
+                                                <rect key="frame" x="196" y="246" width="116" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tTH-Oh-Q8p" secondAttribute="height" multiplier="4:3" id="1c1-7s-J7W"/>
                                                     <constraint firstAttribute="width" constant="116" id="Xaq-Jr-jQP"/>
@@ -605,15 +605,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="top" secondItem="hsf-51-EUA" secondAttribute="top" constant="20" symbolic="YES" id="J9S-lR-Bdd"/>
-                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="leading" secondItem="hsf-51-EUA" secondAttribute="leading" constant="20" symbolic="YES" id="OhZ-b5-Pge"/>
-                                    <constraint firstAttribute="trailing" secondItem="z5p-C3-ov8" secondAttribute="trailing" constant="20" symbolic="YES" id="PtQ-RK-q6R"/>
-                                    <constraint firstAttribute="bottom" secondItem="z5p-C3-ov8" secondAttribute="bottom" constant="20" symbolic="YES" id="SqX-Iv-5I9"/>
-                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="leading" secondItem="hsf-51-EUA" secondAttribute="leading" constant="20" symbolic="YES" id="Zzk-p2-kMk"/>
-                                    <constraint firstAttribute="trailing" secondItem="z5p-C3-ov8" secondAttribute="trailing" constant="20" symbolic="YES" id="gar-v0-Ztq"/>
+                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="top" secondItem="hsf-51-EUA" secondAttribute="top" id="J9S-lR-Bdd"/>
+                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="leading" secondItem="hsf-51-EUA" secondAttribute="leading" id="OhZ-b5-Pge"/>
+                                    <constraint firstAttribute="trailing" secondItem="z5p-C3-ov8" secondAttribute="trailing" id="PtQ-RK-q6R"/>
+                                    <constraint firstAttribute="bottom" secondItem="z5p-C3-ov8" secondAttribute="bottom" id="SqX-Iv-5I9"/>
+                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="leading" secondItem="hsf-51-EUA" secondAttribute="leading" id="Zzk-p2-kMk"/>
+                                    <constraint firstAttribute="trailing" secondItem="z5p-C3-ov8" secondAttribute="trailing" id="gar-v0-Ztq"/>
                                     <constraint firstAttribute="centerX" secondItem="z5p-C3-ov8" secondAttribute="centerX" id="hq6-Up-r2J"/>
-                                    <constraint firstAttribute="bottom" secondItem="z5p-C3-ov8" secondAttribute="bottom" constant="20" symbolic="YES" id="oVo-Nd-Dur"/>
-                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="top" secondItem="hsf-51-EUA" secondAttribute="top" constant="20" symbolic="YES" id="taQ-iY-cw9"/>
+                                    <constraint firstAttribute="bottom" secondItem="z5p-C3-ov8" secondAttribute="bottom" id="oVo-Nd-Dur"/>
+                                    <constraint firstItem="z5p-C3-ov8" firstAttribute="top" secondItem="hsf-51-EUA" secondAttribute="top" id="taQ-iY-cw9"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

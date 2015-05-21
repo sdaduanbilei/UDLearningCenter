@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AnswerViewController: UIViewController {
     
@@ -22,10 +23,17 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var user_nick: UILabel!
     @IBOutlet weak var user_icon: UIImageView!
     
+    var audioPlay_error:AVAudioPlayer!
+    var audioPlay_right:AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let url_error = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("error", ofType:"mp3")!)
+        audioPlay_error = AVAudioPlayer(contentsOfURL:url_error, error:nil)
+        
+        let url_right = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("right", ofType:"mp3")!)
+        audioPlay_right = AVAudioPlayer(contentsOfURL:url_right, error:nil)
+        
         setUp()
         // Do any additional setup after loading the view.
     }
@@ -55,13 +63,13 @@ class AnswerViewController: UIViewController {
         self.contentView.addSubview(btn_a)
         
         let btn_b = UIButton(frame: CGRectMake(0, btn_size, btn_size,btn_size))
-        btn_b.setBackgroundImage(UIImage(named: "b.png"), forState: UIControlState.Normal);
+        btn_b.setBackgroundImage(UIImage(named: "c.png"), forState: UIControlState.Normal);
         btn_b.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
         btn_b.tag = 2002 ;
         self.contentView.addSubview(btn_b)
         
         let btn_c = UIButton(frame: CGRectMake(btn_size, 0, btn_size,btn_size))
-        btn_c.setBackgroundImage(UIImage(named: "c.png"), forState: UIControlState.Normal);
+        btn_c.setBackgroundImage(UIImage(named: "b.png"), forState: UIControlState.Normal);
         btn_c.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
         btn_c.tag = 2003 ;
         self.contentView.addSubview(btn_c)
@@ -82,8 +90,10 @@ class AnswerViewController: UIViewController {
                 if isright == "y"{
                     self.user_score.backgroundColor = UIColor(red:0.3, green:0.67, blue:0.2, alpha:1) ;
                     self.user_score.text  = json["SCORE"].stringValue
+                    self.audioPlay_right.play()
                 }else{
                     self.user_score.backgroundColor = UIColor(red:0.8, green:0.08, blue:0.13, alpha:1) ;
+                    self.audioPlay_error.play()
                 }
             }
         }) { (error) -> Void in
@@ -99,10 +109,10 @@ class AnswerViewController: UIViewController {
             options = "a"
             break;
         case 2002:
-            options = "b"
+            options = "c"
             break;
         case 2003:
-            options = "c"
+            options = "b"
             break;
         case 2004:
             options = "d"

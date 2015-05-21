@@ -24,11 +24,19 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
     var activiTextFile:UITextField! ;
     
     var imageData:NSData! ;
+    var type_:Int!
+    var imageNew:UIImage!
+    
+    var delegate:EditModelDelegate!
+    
+    var dialog :FVCustomAlertView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prefs = NSUserDefaults.standardUserDefaults()
         setUp();
+        
+        
         
         self.user_phone.delegate = self ;
         self.user_nickname.delegate = self ;
@@ -196,10 +204,10 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage ;
-        let imageNew = PickerImageUtil.compressImage(image!, width: 114, height: 114)
+        self.imageNew = PickerImageUtil.compressImage(image!, width: 114, height: 114)
         self.user_icon.image = imageNew
         
-        self.imageData = UIImageJPEGRepresentation(imageNew, 0.5)
+        self.imageData = UIImageJPEGRepresentation(self.imageNew, 0.5)
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -216,10 +224,64 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
     }
     
     @IBAction func btn_updata(sender: AnyObject) {
-        var phone = user_phone.text;
-        var nickname = user_nickname.text ;
-        var pwd = user_pwd.text ;
+        var phone_str = user_phone.text;
+        var nickname_str = user_nickname.text ;
+        var pwd_str = user_pwd.text ;
         
+        
+        self.dialog  = FVCustomAlertView();
+        self.dialog.showDefaultLoadingAlertOnView(self.view, withTitle: "Loading")
+        
+        if imageData == nil {
+            type_ = 2 ;
+            
+            DataControl.Edit(phone_str, pwd: pwd_str, nickname: nickname_str, type: type_, userid: userModel.userid , onSucc: { (response) -> Void in
+                print(response)
+                self.dialog.hideAlertFromView(self.dialog.currentView, fading: false)
+                var json = JSON(response)
+                var status = json["STATUS"].stringValue ;
+                if (status == "y"){
+                    ToolsUtil.msgBox(json["MSG"].stringValue)
+                    if(self.imageData != nil){
+                        self.delegate.editUserIcon(self.imageNew)
+                    }
+                    self.delegate.editUserName(nickname_str)
+                }else{
+                    ToolsUtil.msgBox(json["MSG"].stringValue)
+                }
+                
+            }, onFail: { (error) -> Void in
+                self.dialog.hideAlertFromView(self.dialog.currentView, fading: false)
+                ToolsUtil.msgBox(error.localizedDescription)
+                
+            })
+        }else{
+            type_ = 1 ;
+            
+            DataControl.Edit(phone_str, pwd: pwd_str, nickname: nickname_str, type: type_, userid: userModel.userid ,imageData: imageData, onSucc: { (response) -> Void in
+                print("")
+                self.dialog.hideAlertFromView(self.dialog.currentView, fading: false)
+                var json = JSON(response)
+                var status = json["STATUS"].stringValue ;
+                if (status == "y"){
+                    ToolsUtil.msgBox(json["MSG"].stringValue)
+                    
+                    if(self.imageData != nil){
+                        self.delegate.editUserIcon(self.imageNew)
+                    }
+                    self.delegate.editUserName(nickname_str)
+                    
+                }else{
+                    ToolsUtil.msgBox(json["MSG"].stringValue)
+                }
+                
+            }, onFail: { (error) -> Void in
+                self.dialog.hideAlertFromView(self.dialog.currentView, fading: false)
+                ToolsUtil.msgBox(error.localizedDescription)
+                
+            })
+            
+        }
         
     }
     
