@@ -20,14 +20,14 @@ class DataControl {
         if let service  = prefs.stringForKey("service"){
             if service.isEmpty{
 //                BASE_URL = "http://www.chuyuntech.com/cyClap/"
-//                BASE_URL = "http://192.168.1.245/"
-                BASE_URL = "http://112.112.170.66:8080/"
+                BASE_URL = "http://192.168.1.245/"
+//                BASE_URL = "http://116.54.97.41:8080/"
             }else{
             BASE_URL = "http://"+service+"/"}
         }else{
 //            BASE_URL = "http://www.chuyuntech.com/cyClap/"
-//            BASE_URL = "http://192.168.1.245/"
-            BASE_URL = "http://112.112.170.66:8080/"
+            BASE_URL = "http://192.168.1.245/"
+//            BASE_URL = "http://116.54.97.41:8080/"
         }
         return BASE_URL ;
        
@@ -61,6 +61,19 @@ class DataControl {
              params = ["roomNo":room,"userId":userid,"team":selected]
         }
         manager.POST(BASE_URL+"api/room", parameters: params, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) ->Void in
+            onSucc(response: responseObject)
+            }) {(operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
+                onFail(error: error)
+        }
+    }
+    
+    
+    // 退出房间
+    class func ExitRoom(room:String,userid:String ,onSucc:(response:AnyObject) ->Void,onFail:(error:NSError) ->Void){
+        initURL();
+        let manager = AFHTTPRequestOperationManager();
+        var params = ["roomNo":room,"userId":userid]
+        manager.POST(BASE_URL+"api/exitRoom", parameters: params, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) ->Void in
             onSucc(response: responseObject)
             }) {(operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
                 onFail(error: error)

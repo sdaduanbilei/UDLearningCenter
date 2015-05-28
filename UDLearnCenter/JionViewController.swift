@@ -44,7 +44,7 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
         self.keyboardIsShowing = true
         
         if let info = notification.userInfo {
-            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             self.arrangeViewOffsetFromKeyboard()
         }
         
@@ -109,19 +109,20 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
     }
     
     // 必须假如此方法 才会出现键盘
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if (self.activiTextFile != nil)
         {
             self.activiTextFile?.resignFirstResponder()
             self.activiTextFile = nil
         }
+
     }
+    
     
     func textFieldDidBeginEditing(textField: UITextField) {
         print("start edit")
@@ -175,7 +176,7 @@ class JionViewController: UIViewController ,UITextFieldDelegate {
         var json = JSON(response);
         
         if json["status"] == "y"{
-            let answerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AnswerViewController") as AnswerViewController ;
+            let answerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AnswerViewController") as! AnswerViewController ;
             answerViewController.userModel = self.userModel ;
             answerViewController.userScore = json["score"].stringValue ;
             answerViewController.room = self.room_No ;

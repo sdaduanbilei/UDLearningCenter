@@ -54,7 +54,8 @@ class AnswerViewController: UIViewController {
         
         // 添加按钮
         
-        let btn_size = self.contentView.frame.width / 2 ;
+        let btn_size = (UIScreen.mainScreen().bounds.width / 2 ) - 16
+        print(btn_size)
         let btn_a = UIButton(frame: CGRectMake(0, 0, btn_size,btn_size))
         btn_a.setBackgroundImage(UIImage(named: "a.png"), forState: UIControlState.Normal);
         btn_a.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -129,6 +130,18 @@ class AnswerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func ExitRoom(){
+        DataControl.ExitRoom(room, userid: userModel.userid, onSucc: { (response) -> Void in
+            print(response)
+        }) { (error) -> Void in
+            print(error)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        print("viewDidDisappear")
+        ExitRoom()
+    }
 
     /*
     // MARK: - Navigation

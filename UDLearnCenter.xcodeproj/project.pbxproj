@@ -22,6 +22,7 @@
 		8192824A1B0CB52400EEBE7E /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 819282481B0CB52400EEBE7E /* right.mp3 */; };
 		8192824C1B0CB55400EEBE7E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8192824B1B0CB55400EEBE7E /* AVFoundation.framework */; };
 		8192824E1B0D7D9900EEBE7E /* EditModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192824D1B0D7D9900EEBE7E /* EditModelDelegate.swift */; };
+		819596C21B14550D00FA80B8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819596C11B14550D00FA80B8 /* HomeController.swift */; };
 		81977E2D1B030D2F00B43350 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */; };
 		81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1D1B030D2F00B43350 /* AFHTTPRequestOperationManager.m */; };
 		81977E2F1B030D2F00B43350 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81977E1F1B030D2F00B43350 /* AFHTTPSessionManager.m */; };
@@ -70,6 +71,7 @@
 		819282481B0CB52400EEBE7E /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
 		8192824B1B0CB55400EEBE7E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8192824D1B0D7D9900EEBE7E /* EditModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModelDelegate.swift; sourceTree = "<group>"; };
+		819596C11B14550D00FA80B8 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		81977E191B030D2F00B43350 /* UDLearnCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDLearnCenter-Bridging-Header.h"; sourceTree = "<group>"; };
 		81977E1A1B030D2F00B43350 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		81977E1B1B030D2F00B43350 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				812386401B0B781100876CE2 /* HomeViewController.swift */,
 				813A9EFB1B0C1E1D009CF5B0 /* EditViewController.swift */,
 				8192824D1B0D7D9900EEBE7E /* EditModelDelegate.swift */,
+				819596C11B14550D00FA80B8 /* HomeController.swift */,
 			);
 			name = page;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				816573171AF2136500A7AD03 /* ViewController.swift in Sources */,
 				811F71621B0B5B3000890C23 /* PickerImageUtil.swift in Sources */,
 				81977E2E1B030D2F00B43350 /* AFHTTPRequestOperationManager.m in Sources */,
+				819596C21B14550D00FA80B8 /* HomeController.swift in Sources */,
 				81977E321B030D2F00B43350 /* AFURLConnectionOperation.m in Sources */,
 				812386411B0B781100876CE2 /* HomeViewController.swift in Sources */,
 				81977E391B0314AC00B43350 /* SwiftyJSON.swift in Sources */,

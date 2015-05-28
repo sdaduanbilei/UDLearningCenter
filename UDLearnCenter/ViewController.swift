@@ -47,7 +47,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate 
         self.keyboardIsShowing = true
         
         if let info = notification.userInfo {
-            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             self.arrangeViewOffsetFromKeyboard()
         }
         
@@ -124,7 +124,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate 
     }
     
     // 必须假如此方法 才会出现键盘
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -140,16 +140,13 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate 
     }
     
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if (self.activiTextFile != nil)
         {
             self.activiTextFile?.resignFirstResponder()
-//            self.activiTextFile = nil
+
         }
     }
-    
-    
     
     
     // 执行登录操作
@@ -174,9 +171,9 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate 
                 
                 self.userModel  = UserModel(userid: json["userId"].stringValue,head: head_url,nickname: json["nickname"].stringValue,score: json["score"].stringValue,conversations: json["conversations"].stringValue,userType: json["userType"].stringValue,words: json["words"].stringValue)
                 // 调转到首页
-                let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController;
-                homeViewController?.userModel = self.userModel ;
-                    self.navigationController?.pushViewController(homeViewController!, animated: true)
+                let homeController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeController") as? HomeController;
+                homeController?.userModel = self.userModel ;
+                    self.navigationController?.pushViewController(homeController!, animated: true)
                 }else{
                 ToolsUtil.msgBox(json["MSG"].stringValue)
             }
@@ -189,7 +186,7 @@ class ViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate 
     
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MainViewController"{
-            var mainViewController  = segue.destinationViewController as MainViewController
+            var mainViewController  = segue.destinationViewController as! MainViewController
             print("run this ===========")
             mainViewController.userModel = self.userModel ;
         }

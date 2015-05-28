@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "jion"{
-            var jsonViewController  = segue.destinationViewController as JionViewController
+            var jsonViewController  = segue.destinationViewController as! JionViewController
             print("run this ===========")
             jsonViewController.userModel = self.userModel ;
         }

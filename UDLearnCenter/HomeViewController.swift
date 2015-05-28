@@ -143,7 +143,7 @@ class HomeViewController: UIViewController , EditModelDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "jion"{
-            var jsonViewController  = segue.destinationViewController as JionViewController
+            var jsonViewController  = segue.destinationViewController as! JionViewController
             print("run this ===========")
             jsonViewController.userModel = self.userModel ;
         }
@@ -152,7 +152,7 @@ class HomeViewController: UIViewController , EditModelDelegate {
     
     @IBAction func pushEditControllerView(sender: AnyObject) {
         
-        let editViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EditViewController") as EditViewController ;
+        let editViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EditViewController") as! EditViewController ;
         
         editViewController.userModel = self.userModel ;
         

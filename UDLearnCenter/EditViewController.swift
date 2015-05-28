@@ -55,7 +55,7 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
         self.keyboardIsShowing = true
         
         if let info = notification.userInfo {
-            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             self.arrangeViewOffsetFromKeyboard()
         }
         
@@ -100,7 +100,7 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
     }
     
     // 必须假如此方法 才会出现键盘
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -115,17 +115,15 @@ class EditViewController: UIViewController ,UIActionSheetDelegate ,UINavigationC
         }
     }
     
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if (self.activiTextFile != nil)
         {
             self.activiTextFile?.resignFirstResponder()
             self.activiTextFile = nil
         }
+
     }
-
-
+    
 
     func setUp(){
         // 头像

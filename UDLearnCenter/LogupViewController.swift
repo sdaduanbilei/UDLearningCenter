@@ -26,9 +26,9 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     var activiTextFile:UITextField! ;
     
     var picker:UIImagePickerController!
-    var Phone:String!
-    var Nickname:String!
-    var Pwd:String!
+    var phone_str:String!
+    var nickname_str:String!
+    var pwd_str:String!
     var actionSheet:UIActionSheet!
     var Usertype:String! = "0"
     var imageData:NSData!
@@ -58,7 +58,7 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
         self.keyboardIsShowing = true
         
         if let info = notification.userInfo {
-            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             self.arrangeViewOffsetFromKeyboard()
         }
         
@@ -202,11 +202,11 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     }
     
     @IBAction func btn_logup(sender: AnyObject) {
-        Phone = phone.text;
-        Nickname  = nickname.text ;
-        Pwd = pwd.text ;
-        print("phone==="+Phone+"===pwd=="+Pwd+"=="+Nickname)
-        if Phone.isEmpty || Nickname.isEmpty || Pwd.isEmpty {
+        phone_str = phone.text;
+        nickname_str  = nickname.text ;
+        pwd_str = pwd.text ;
+        print("phone==="+phone_str+"===pwd=="+pwd_str+"=="+nickname_str)
+        if phone_str.isEmpty || nickname_str.isEmpty || pwd_str.isEmpty {
             ToolsUtil.msgBox("以上信息不能为空")
         }else{
             if (self.imageData == nil){
@@ -221,7 +221,7 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     }
     
     func RegUp(){
-        DataControl.LogUp(Phone, pwd: Pwd, nickname: Nickname, imageData:self.imageData, userType: Usertype, onSucc: { (response) -> Void in
+        DataControl.LogUp(phone_str, pwd: pwd_str, nickname: nickname_str, imageData:self.imageData, userType: Usertype, onSucc: { (response) -> Void in
             print(response)
             var json = JSON(response);
             if json["status"] == "y"{
@@ -239,19 +239,22 @@ class LogupViewController: UIViewController,UINavigationControllerDelegate ,UIIm
     
     
     // 必须假如此方法 才会出现键盘
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.scrollView.endEditing(true)
         if (self.activiTextFile != nil)
         {
             self.activiTextFile?.resignFirstResponder()
             
         }
+
     }
+    
+    
     
     func textFieldDidBeginEditing(textField: UITextField) {
         print("start edit")
